@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Entrega 2: Lógica de Programación y Control de Flujo</title>
+    <!-- Vinculado en el head con el atributo defer como pide la consigna -->
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+    <h1>Ejercicio</h1>
+    <p><strong>Actividad:</strong> Pre-Entrega 2: Lógica de Programación y Control de Flujo</p>
+
+    <p>¡Felicidades por llegar al final del segundo módulo! Hasta ahora, has aprendido a declarar variables, interactuar con el usuario y, lo más importante, a tomar decisiones con el código y repetir tareas automáticamente.</p>
+    
+    <p>Este entregable es un paso intermedio fundamental, ya que es la base lógica sobre la que construiremos aplicaciones más complejas. En esta etapa, nos aseguraremos de que dominas la "columna vertebral" de cualquier programa: la capacidad de controlar exactamente qué instrucciones se ejecutan y cuántas veces.</p>
+
+    <h2>El objetivo</h2>
+    <p>El propósito de esta pre-entrega es consolidar el uso de bucles (loops) y condicionales. Un programador no solo escribe código que funciona, sino código que sabe cuándo detenerse, cuándo saltar pasos innecesarios y cómo manejar diferentes escenarios lógicos.</p>
+
+    <h2>¿Qué construirás?</h2>
+    <p>Vas a desarrollar un Algoritmo de Interacción Lógica. Este script debe ser capaz de procesar una serie de entradas (datos) del usuario, evaluarlas mediante condiciones y repetir procesos hasta que se cumpla un stop específico.</p>
+
+    <h2>Instrucciones del Checkpoint</h2>
+    
+    <h3>1. Estructura de Decisión (Condicionales)</h3>
+    <p>Debes usar <code>if</code>, <code>else if</code> y <code>else</code> para bifurcar el flujo. Por ejemplo: validar si un número es mayor que otro, si un string coincide con una clave, o si un usuario tiene permisos. Opcional: Puedes usar un switch si tienes múltiples opciones fijas (como un menú de selección).</p>
+
+    <h3>2. Estructura de Repetición (Bucles)</h3>
+    <p>Debes implementar al menos un bucle (for, while o do...while).</p>
+    <ul>
+        <li>Usa <strong>for</strong> si conoces la cantidad de veces que quieres repetir algo (ej: mostrar los números del 1 al 10).</li>
+        <li>Usa <strong>while</strong> si la repetición depende de una condición que el usuario puede cambiar (ej: repetir hasta que el usuario escriba "ESC").</li>
+        <li>Usá <strong>do...while</strong> si querés que el bloque se ejecute al menos una vez antes de chequear la condición (ej: pedir un dato con prompt y repetir hasta que sea válido). Si no lo viste en la clase en vivo, repasalo en la unidad "Repetición con for, while y do...while" de este mismo módulo: está explicado con ejemplos, errores comunes y quiz.</li>
+    </ul>
+
+    <h2>Criterios de Aceptación</h2>
+    <p>El repositorio debe:</p>
+    <ol>
+        <li><strong>Funcionar sin errores:</strong> No debe haber errores de sintaxis al abrir el archivo.</li>
+        <li><strong>Combinar estructuras:</strong> Debe existir al menos un bucle que contenga un condicional dentro.</li>
+        <li><strong>Interactividad:</strong> El script debe interactuar con el usuario mediante prompt o console.log.</li>
+        <li><strong>Desarrollo con sentido:</strong> No deben ser herramientas sueltas, el script debe funcionar en un contexto de simulador.</li>
+    </ol>
+
+    <p><strong>Método de entrega:</strong> Se deberá enviar el link del repositorio de github en modo público.</p>
+
+    <hr>
+
+    <h2>📎 Así se ve el entregable (ejemplo de referencia)</h2>
+    <p><strong>Estructura de archivos esperada:</strong></p>
+    <pre>
+mi-simulador/
+├── index.html   # enlaza el script: &lt;script src="main.js" defer&gt;&lt;/script&gt;
+└── main.js      # toda tu lógica de control de flujo
+    </pre>
+
+    <p><strong>Ejemplo de main.js (adaptalo a tu propio simulador — este es un control de acceso con reintentos):</strong></p>
+    <pre><code>
+// Simulador: control de acceso con reintentos
+const CLAVE = "coder";
+let intentos = 0;
+let acceso = false;
+// BUCLE: repite hasta 3 intentos o hasta acertar
+while (intentos &lt; 3 &amp;&amp; !acceso) {
+  const ingreso = prompt("Ingresá la clave:");
+  // CONDICIONAL dentro del bucle
+  if (ingreso === CLAVE) {
+    acceso = true;
+    console.log("✅ Acceso concedido");
+  } else {
+    intentos++;
+    console.log(`❌ Clave incorrecta. Intentos restantes: ${3 - intentos}`);
+  }
+}
+// Resultado final coherente al terminar el bucle
+if (!acceso) {
+  console.log("🔒 Cuenta bloqueada por demasiados intentos");
+}
+    </code></pre>
+
+    <p>Fijate que hay un bucle (while) que contiene un condicional (if/else) — exactamente lo que pide el criterio "Combinar estructuras".</p>
+
+    <h2>✅ Checklist de entrega</h2>
+    <ul>
+        <li>Repo público de GitHub con index.html + main.js vinculados con defer. (→ Estructura del repositorio, 25%)</li>
+        <li>Al menos un bucle (for/while/do...while) con un condicional adentro. (→ Uso correcto de bucles, 25%)</li>
+        <li>Variables declaradas con const y let + condicionales if/else (o switch). (→ Variables y condicionales, 25%)</li>
+        <li>Interacción con prompt y salida por console.log/alert. (→ Salida final, 10%)</li>
+        <li>Todo dentro de un contexto de "simulador" con sentido, no instrucciones sueltas. (→ Planteamiento del problema, 15%)</li>
+    </ul>
+
+    <p>Repositorio de GitHub que contenga un archivo HTML y un archivo JS donde se implemente la consigna solicitada.</p>
+
+    <h2>Entregable</h2>
+    <h3>Instrucciones para la Pre-entrega</h3>
+    <ol>
+        <li><strong>Estructura de archivos:</strong> Crea una carpeta para tu proyecto con un archivo <code>index.html</code> y un archivo <code>main.js</code> en su correspondiente carpeta. Vincula el script en la etiqueta head del HTML con el atributo defer.</li>
+        <li><strong>Definición del Problema:</strong> Situate en una parte del simulador elegido a desarrollar que requiera repetición y decisiones (ej: un contador de puntos de un juego, un validador de stock, o un calculador de promedio de notas).</li>
+        <li><strong>Implementación de Lógica:</strong>
+            <ul>
+                <li>Declara las variables necesarias (usa <code>const</code> y <code>let</code>).</li>
+                <li>Crea mínimo bucle para interactuar con el usuario.</li>
+                <li>Usar un <code>if/else</code> para evaluar esos datos. Si la estructura es extensa debe mutar a switch.</li>
+            </ul>
+        </li>
+        <li><strong>Salida de Resultados:</strong> Muestra por consola o mediante un alert toda comunicación necesaria para el flujo del script.</li>
+        <li><strong>Entrega:</strong> Sube tus archivos a un repositorio de GitHub y comparte la URL. Asegúrate de que el repositorio sea público para que pueda ser revisado.</li>
+    </ol>
+
+</body>
+</html>
